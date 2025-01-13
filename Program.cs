@@ -101,7 +101,7 @@ internal class Program
                 HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(responseBody);
+                //Console.WriteLine(responseBody);
                 WeatherForecast? weatherForecast = JsonSerializer.Deserialize<WeatherForecast>(responseBody);
                                                  
                 double temperature = weatherForecast?.CurrentWeather?.Temperature ?? 0.0D;
